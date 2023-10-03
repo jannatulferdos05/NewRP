@@ -21,27 +21,6 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
-
-
-    <style type="text/css">
-        .div_center{
-            text-align: center;
-            padding-top: 0px;
-        }
-        .text_color{
-            color: black;
-            padding-bottom: 20px;
-        }
-
-        label{
-            display: inline-block;
-            width: 200px;
-        }
-        .div_design{
-            padding-bottom: 15px;
-        }
-    </style>
-
 </head>
 <body>
 <div class="container-scroller">
@@ -51,7 +30,6 @@
     @include('admin.header')
     <!-- partial -->
     <div class="main-panel">
-
         <div class="content-wrapper">
             @if(session()->has('message'))
                 <div class="alert alert-success">
@@ -59,60 +37,28 @@
                     {{session()->get('message')}}
                 </div>
             @endif
-            <div class="div_center">
-                <h1 style="font-size: 40px; padding-bottom: 40px;">Add Product</h1>
-                <form action="{{url('/add_product')}}" method="POST" enctype="multipart/form-data" >
-                    @csrf
-                <div class="div_design">
-                <label>Item Title</label>
-                <input class="text_color" type="text" name="title" placeholder="Write a title" required="">
-                </div>
-
-                <div class="div_design">
-                    <label>Item Description</label>
-                    <input class="text_color" type="text" name="description" placeholder="Write a description" required="">
-                </div>
-
-                <div class="div_design">
-                    <label>Item Price</label>
-                    <input class="text_color" type="number" name="price" placeholder="Price of the Item" required="">
-                </div>
-
-                <div class="div_design">
-                    <label>Item Quantity</label>
-                    <input class="text_color" type="number" min="0" name="quantity" placeholder="Quantity of the Item" required="">
-                </div>
-
-                <div class="div_design">
-                    <label>Item Category</label>
-                    <select class="text_color" name="category" required="">
-
-                        <option value="" selected="">Add a category</option>
-
-                        @foreach($category as $category)
-                            <option>{{$category->category_name}}</option>
-                        @endforeach
-
-                    </select>
-                </div>
-
-                <div class="div_design">
-                    <label>Item Image here</label>
-                    <input type="file" name="image" required="">
-                </div>
-
-                <div class="div_design">
-                    <label>Holder ID</label>
-                    <input class="text_color" type="number" name="holder_id" placeholder="ID of Item holder">
-                </div>
-
-                <div class="div_design">
-                    <input type="submit" value="Add Item" class="btn btn-primary">
-                </div>
+            <div style="text-align: center; padding-top: 40px;">
+                <h2 style="font-size: 35px; padding-bottom: 40px;">Create new tokens</h2>
+                <form action="{{route('token')}}">
+                    <input type="number" value="5" name="count" style="color: black">
+                    <input type="submit" value="Create" class="btn btn-primary">
                 </form>
-
             </div>
-
+                <div class="" style="display: flex; justify-content: center; align-items: center; font-size: 2em; padding: 4px;">
+                    <div>Total Earning From Donation: {{$total}}</div>
+                </div>
+            <table style="margin: auto;width: 50%; text-align: center; margin-top: 30px; border: 3px solid green;">
+                <tr>
+                    <td>Token</td>
+                    <td>Token Value</td>
+                </tr>
+                    @foreach($tokens as $token)
+                        <tr>
+                            <td>{{$token->token}}</td>
+                            <td><a onclick="return confirm('Are you sure to delete the item?')" class="btn btn-danger" href="{{route('delete-token',$token->id)}}">Delete</a></td>
+                        </tr>
+                    @endforeach
+            </table>
         </div>
     </div>
     <!-- container-scroller -->

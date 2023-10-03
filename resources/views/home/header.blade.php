@@ -5,7 +5,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class=""> </span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
@@ -16,6 +16,9 @@
                             <li><a href="http://127.0.0.1:8000/home">About</a></li>
                             <li><a href="http://127.0.0.1:8000/home">Tutorials</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="donateWindow()">Donate</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:8000/robotics">Robotics</a>
@@ -60,3 +63,23 @@
         </nav>
     </div>
 </header>
+
+<div id="donate" style="display:none;width: 300px; height: 200px; position: fixed; top: 30%; left: 40%; background: wheat; box-shadow: 0 0 5px black; z-index: 100;">
+    <form action="{{route('donate-now')}}" method="post">
+        @csrf
+        <h2 align="center" style="font-size: 1.4em">Enter your token</h2>
+        <input type="text" name="token">
+        <input type="submit" value="Donate Now"> <button type="button" onclick="document.getElementById('donate').style.display='none'" class="btn btn-primary" style="position: absolute; left: 40%; margin-top: 4px;">Close</button>
+    </form>
+</div>
+
+<script>
+    function donateWindow(){
+        document.getElementById('donate').style.display='block';
+
+    }
+
+    @if(session()->has('message'))
+         window.onload=()=>{alert("{{session()->get('message')}}")}
+    @endif
+</script>

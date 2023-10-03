@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donations;
+use App\Models\Tokens;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -20,8 +22,20 @@ class HomeController extends Controller
     public function redirect(){
 
         $usertype=Auth::user()->usertype;
+
+        $allearnings=Donations::query()->select("*")->get();
+        $sum=0;
+        foreach ($allearnings as &$a){
+            $token=$a->token_used;
+            $tkn=Tokens::query()->select("*")->where('token','=',$token)->get();
+            if(count($tkn)>0) {
+                $a->value = $tkn[0]->value;
+                $sum += $a->value;
+            }
+        }
+
         if($usertype==1){
-            return view('admin.home');
+            return view('admin.home')->with('earning',$sum);
         }
         else{
             $product=Product::paginate(3);

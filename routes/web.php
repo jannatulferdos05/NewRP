@@ -84,3 +84,10 @@ Route::get('/remove_cart/{id}', [HomeController::class,'remove_cart']);
 Route::get('/holder/{id}/{idd}', [HomeController::class,'holder'])->name('holder-route');
 
 Route::get('/apply/{id}', [HomeController::class,'apply']);
+
+
+
+Route::get('/donations',[\App\Http\Controllers\DonationController::class,'index'])->name("donations");
+Route::get('/donations/create-new-token',[\App\Http\Controllers\DonationController::class,'createtoken'])->name("token");
+Route::get('/donations/delete-token/{id}',[\App\Http\Controllers\DonationController::class,'delete'])->name("delete-token");
+Route::post('/donations/donate-now',[\App\Http\Controllers\DonationController::class,'makeDonate'])->name("donate-now");
