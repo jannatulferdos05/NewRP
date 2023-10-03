@@ -18,13 +18,13 @@
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Anna Trevor
+                                Bima Kumkum
                             </h5>
                             <h6>
-                                Customer
+                                Student
                             </h6>
                             <p>
-                                Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                                This is useful actually!
                             </p>
                         </div>
                     </div>
@@ -40,13 +40,13 @@
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Anna Trevor
+                                Fahima Islam
                             </h5>
                             <h6>
-                                Customer
+                                Student
                             </h6>
                             <p>
-                                Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                               Too good!
                             </p>
                         </div>
                     </div>
@@ -62,13 +62,13 @@
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Anna Trevor
+                                Susmita Sen
                             </h5>
                             <h6>
-                                Customer
+                                Student
                             </h6>
                             <p>
-                                Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                                I have been ....
                             </p>
                         </div>
                     </div>

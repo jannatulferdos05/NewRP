@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,21 +19,18 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class,'index']);
 
 Route::get('/redirect', [HomeController::class,'redirect']);
-Route::any('/robotics',function (){
-    return view('demo');
-});
-Route::any('/programming',function (){
-    return view('programming');
+Route::any('/robotics',[HomeController::class,'robotics']);
+Route::any('/contact',[HomeController::class,'contact']);
+
+Route::any('/blog',function (){
+    return view('blog');
 });
 Route::any('/home',function (){
-    return view('welcome');
+    return view('home.userpage');
 });
 Route::any('/about',function (){
     return view('about');
 });
-
-
-
 
 Route::middleware([
     'auth:sanctum',
@@ -41,3 +41,46 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/view_category', [AdminController::class,'view_category']);
+
+Route::post('/add_category', [AdminController::class,'add_category']);
+
+Route::get('/delete_category/{id}', [AdminController::class,'delete_category']);
+
+Route::get('/view_product', [AdminController::class,'view_product']);
+
+Route::post('/add_product', [AdminController::class,'add_product']);
+
+Route::get('/show_product', [AdminController::class,'show_product']);
+
+Route::get('/delete_product/{id}', [AdminController::class,'delete_product']);
+
+Route::get('/update_product/{id}', [AdminController::class,'update_product']);
+
+Route::post('/update_product_confirm/{id}', [AdminController::class,'update_product_confirm']);
+
+Route::get('/order', [AdminController::class,'order']);
+
+Route::get('/return', [AdminController::class,'return']);
+
+
+
+
+
+
+
+
+
+
+Route::get('/product_details/{id}', [HomeController::class,'product_details']);
+
+Route::post('/add_cart/{id}', [HomeController::class,'add_cart']);
+
+Route::get('/show_cart', [HomeController::class,'show_cart']);
+
+Route::get('/remove_cart/{id}', [HomeController::class,'remove_cart']);
+
+Route::get('/holder/{id}/{idd}', [HomeController::class,'holder'])->name('holder-route');
+
+Route::get('/apply/{id}', [HomeController::class,'apply']);
