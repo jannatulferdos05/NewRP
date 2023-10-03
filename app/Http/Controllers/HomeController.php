@@ -28,6 +28,13 @@ class HomeController extends Controller
         foreach ($allearnings as &$a){
             $token=$a->token_used;
             $tkn=Tokens::query()->select("*")->where('token','=',$token)->get();
+            if($a->user_id>=0){
+                $user=User::query()->select('*')->where('id','=',$a->user_id)->get();
+                $a->donator="Unknown";
+                if(count($user)>0){
+                    $a->donator=$user[0]->name;
+                }
+            }
             if(count($tkn)>0) {
                 $a->value = $tkn[0]->value;
                 $sum += $a->value;
@@ -35,7 +42,7 @@ class HomeController extends Controller
         }
 
         if($usertype==1){
-            return view('admin.home')->with('earning',$sum);
+            return view('admin.home')->with('earning',$sum)->with('allearnings',$allearnings);
         }
         else{
             $product=Product::paginate(3);

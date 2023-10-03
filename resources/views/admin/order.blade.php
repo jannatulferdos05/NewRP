@@ -110,6 +110,8 @@
     <script>
         function disable(x){
             x.disabled = true;
+            x.innerText="Approved!";
+            console.log(x)
         }
     </script>
 

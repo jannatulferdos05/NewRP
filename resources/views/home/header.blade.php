@@ -18,7 +18,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="donateWindow()">Donate</a>
+                        <a class="nav-link" onclick="donateWindow()">Subventiong</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:8000/robotics">Robotics</a>
@@ -69,7 +69,7 @@
         @csrf
         <h2 align="center" style="font-size: 1.4em">Enter your token</h2>
         <input type="text" name="token">
-        <input type="submit" value="Donate Now"> <button type="button" onclick="document.getElementById('donate').style.display='none'" class="btn btn-primary" style="position: absolute; left: 40%; margin-top: 4px;">Close</button>
+        <input type="submit" value="Provide Subvention"> <button type="button" onclick="document.getElementById('donate').style.display='none'" class="btn btn-primary" style="position: absolute; left: 40%; margin-top: 4px;">Close</button>
     </form>
 </div>
 

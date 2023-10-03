@@ -45,7 +45,7 @@
                 </form>
             </div>
                 <div class="" style="display: flex; justify-content: center; align-items: center; font-size: 2em; padding: 4px;">
-                    <div>Total Earning From Donation: {{$total}}</div>
+                    <div>Total Earning From Club Fees: {{$total}}</div>
                 </div>
             <table style="margin: auto;width: 50%; text-align: center; margin-top: 30px; border: 3px solid green;">
                 <tr>
