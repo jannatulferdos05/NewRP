@@ -18,7 +18,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="donateWindow()">Subventiong</a>
+                        <a class="nav-link" onclick="donateWindow()">Subvention</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:8000/robotics">Robotics</a>
