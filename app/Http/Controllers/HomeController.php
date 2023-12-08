@@ -10,6 +10,9 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Showcase;
+use App\Models\Blog;
+
 
 
 class HomeController extends Controller
@@ -50,9 +53,12 @@ class HomeController extends Controller
         }
     }
 
-    public function robotics(){
-        $product=Product::paginate(3);
-        return view('home.robotics',compact('product'));
+    public function robotics(Request $request){
+        $product=Product::paginate(6);
+
+        $showcase=showcase::all();
+
+        return view('home.robotics',compact('product','showcase'));
     }
 
     public function product_details($id){
@@ -142,10 +148,42 @@ class HomeController extends Controller
 
         return view('home.contact');
     }
-    public function blog(){
 
-        return view('home.blog');
+
+    public function showcase(){
+        if(Auth::id()){
+
+            return view('home.showcase');
+        }
+        else{
+            return redirect('login');
+        }
+
+
     }
+
+    public function new_robotics(Request $request)
+    {
+        $showcase = new showcase;
+        $user = Auth::user();
+        $showcase->title = $request->title;
+        $showcase->description = $request->description;
+        $showcase->tools = $request->tools;
+        $showcase->author = $user->name;
+        if($request->hasFile('image')){
+        $image = $request->file('image');
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+        $request->image->move('product', $imagename);
+        $showcase->image = $imagename;
+
+         }
+        $showcase->save();
+
+        return redirect()->back()->with('message','Successfully added the Item.');
+
+    }
+
 
 
 }

@@ -62,7 +62,7 @@
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Susmita Sen
+                                Riya Sultana
                             </h5>
                             <h6>
                                 Student

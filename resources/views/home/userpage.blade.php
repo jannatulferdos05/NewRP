@@ -44,7 +44,6 @@
 <!-- end product section -->
 
 <!-- subscribe section -->
-@include('home.subscribe')
 <!-- end subscribe section -->
 <!-- client section -->
 @include('home.client')

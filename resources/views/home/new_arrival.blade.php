@@ -8,14 +8,14 @@
                 <div class="col-md-6 ml-auto">
                     <div class="heading_container remove_line_bt">
                         <h2>
-                            #NewArrivals
+                            NewArrivals
                         </h2>
                     </div>
                     <p style="margin-top: 20px;margin-bottom: 30px;">
-                        Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
+                       What's new in our club!!
                     </p>
                     <a href="">
-                        Shop Now
+                        See Now
                     </a>
                 </div>
             </div>

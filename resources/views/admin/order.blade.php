@@ -55,7 +55,7 @@
             @endif
 
 
-            <h2 style="text-align: center;font-size: 30px;padding-top: 15px;">All Requests</h2>
+            <h2 style="text-align: center;font-size: 30px;padding-top: 15px;">Item Requests</h2>
             <table class="center">
                 <tr style="background:green">
                     <th class="th_des">Name</th>
@@ -93,7 +93,7 @@
 
 
                         <td><a class="btn btn-danger" onclick=" return confirm('Are you sure to delete?')"
-                               href="#">Cancel</a></td>
+                               href="{{redirect()->back()}}">Cancel</a></td>
                         <td><button class="btn btn-success" onclick="disable(this)" >Approve</button></td>
 
                     </tr>
@@ -110,7 +110,7 @@
     <script>
         function disable(x){
             x.disabled = true;
-            x.innerText="Approved!";
+            x.innerText="Approved";
             console.log(x)
         }
     </script>

@@ -32,9 +32,10 @@
         <div class="slider_bg_box">
             <img src="images/pointing.jpg" alt="">
         </div>
+
     </section>
 
-    <!-- end slider section -->
+<!-- end slider section -->
 </div>
 
 
@@ -53,13 +54,15 @@
 
 <h1 style="font-weight: bold;color: #0c5460; margin-left: 540px;margin-top: 10px; font-size: 30px;" >Project ShowCASE</h1>
 
-<div style="margin-left: 80px; padding-top: 10px; display: flex; flex-wrap: wrap;">
+<div style="margin-left: 80px; padding-top: 10px;">
 
-    @foreach($showcase as $showcase)
+    @foreach($showcase as $show)
 
-        <div style="margin-bottom: 20px; width: 31%; margin: 5px;min-height: 400px;">
-            <div class="img-box" style="width: 100%;" >
-                <img src="product/{{$showcase->image}}" alt="" style="width: 100%;">
+
+
+        <div style="margin-bottom: 20px;">
+            <div class="img-box" style="width: 200px;height: 150px;" >
+                <img src="product/{{$showcase->image}}" alt="">
             </div>
             <div class="detail-box">
                 <h5>
@@ -75,14 +78,14 @@
                 <h6>
                     Posted By : <span style="color:green">{{$showcase->author}}</span>
                 </h6>
-                <div class="btn btn-primary" style="color:"><a href="">Tutorial</a></div>
+
 
             </div>
 
         </div>
 
 
-    @endforeach
+   @endforeach
 
 
 

@@ -55,7 +55,7 @@
             @endif
 
 
-            <h2 style="text-align: center;font-size: 30px;padding-top: 15px;">All Requests</h2>
+            <h2 style="text-align: center;font-size: 30px;padding-top: 15px;">Return Requests</h2>
             <table class="center">
                 <tr style="background:green">
                     <th class="th_des">Name</th>

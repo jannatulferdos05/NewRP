@@ -13,18 +13,18 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://127.0.0.1:8000/home">About</a></li>
-                            <li><a href="http://127.0.0.1:8000/home">Tutorials</a></li>
+                            <li><a href="http://127.0.0.1:8000/about">About</a></li>
+                            <li><a href="http://127.0.0.1:8000/tutorial">Tutorials</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="donateWindow()">Subvention</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8000/robotics">Robotics</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/robotics">JUI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog_list.html">Blog</a>
+                        <a class="nav-link" href="{{url('/blog')}}">Farhana</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://127.0.0.1:8000/contact">Contact</a>

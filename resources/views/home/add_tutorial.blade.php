@@ -30,49 +30,77 @@
 
 
     <!-- project contact section -->
-    <div style="margin-left: 80px; padding-top: 50px;">
 
-        <a href="{{url('/add_blog')}}" class="btn btn-success">Add Post</a>
+    <!-- start blog -->
 
-    </div>
+    <div class="main-panel">
 
-    <div style="margin-left: 80px; padding-top: 10px; display: flex; flex-wrap: wrap;">
+        <div class="content-wrapper" style="margin-left: 280px;margin-right: 280px;">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    {{session()->get('message')}}
+                </div>
+            @endif
+            <div class="div_center">
 
-        @foreach($blogs as $blog)
+                <div>
 
-            <div style="margin-bottom: 20px; width: 31%; margin: 5px;min-height: 400px;">
+                    <h1 style="font-size: 30px; font-weight: bolder; box-shadow: #0c5460; color: teal; padding-bottom: 40px;">Upload a tutorial</h1>
+                    <form action="{{url('/save_tutorial')}}" method="POST" enctype="multipart/form-data" >
+                        @csrf
+                        <div class="div_design">
+                            <label>Project Title</label>
+                            <input class="text_color" type="text" name="title" placeholder="Write a title" required="">
+                        </div>
 
-                <div class="detail-box">
-                    <br>
-                    <h5>
-                        Title : <span style="color:crimson;">{{$blog->title}}</span>
-                    </h5>
 
 
-                    <h6>
-                        Description : {{$blog->description}}
-                    </h6>
-                    <h6>
-                        Posted By : <span style="color:green;">{{$blog->author}}</span>
-                    </h6>
+
+                        <div class="div_design">
+                            <label>Processes</label>
+                            <textarea class="text_color" type="text" name="description" placeholder="Write the processes.." required=""></textarea>
+                        </div>
+
+
+                        <!--  <div class="div_design">
+                              <label>Blog Category</label>
+                              <select class="text_color" name="category" >
+
+                                  <option value="" selected="">Add a category</option>
+                                  <option>ML</option>
+                                  <option>DL</option>
+                                  <option>AI</option>
+                                  <option>Career</option>
+                              </select>
+                          </div> -->
+
+                        <div class="div_design">
+                            <label>Choose Image</label>
+                            <input type="file" name="image" >
+                        </div>
+
+
+
+                        <div class="div_design">
+                            <input type="submit" value="Post" class="btn btn-primary">
+                        </div>
+                    </form>
 
                 </div>
 
             </div>
-
-
-        @endforeach
-
-
+        </div>
 
     </div>
 
 
-
-
+    <!-- End blog -->
 
     <!-- end project show section -->
+    <!-- client section -->
 
+    <!-- end client section -->
     <!-- footer start -->
     <footer>
         <div class="container">

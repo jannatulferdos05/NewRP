@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TutorialController;
 
 
 /*
@@ -16,18 +18,37 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
+//tutorial
 
+
+
+Route::any('/add_tutorial',[TutorialController::class,'add_tutorial']);
+
+Route::get('/tutorial',[TutorialController::class,'tutorial']);
+
+Route::post('/save_tutorial',[TutorialController::class,'save_tutorial']);
+
+
+
+
+//Blog
+Route::any('/add_blog',[BlogController::class,'add_blog'])->name('add-blog');
+
+Route::get('/blog',[BlogController::class,'blog'])->name('blogs');
+
+Route::post('/save_blog',[BlogController::class,'save_blog']);
+
+
+//Home
+
+Route::get('/', [HomeController::class,'index']);
 Route::get('/redirect', [HomeController::class,'redirect']);
 Route::any('/robotics',[HomeController::class,'robotics']);
 Route::any('/contact',[HomeController::class,'contact']);
+Route::any('/showcase',[HomeController::class,'showcase']);
+Route::any('/new_robotics',[HomeController::class,'new_robotics']);
 
-Route::any('/blog',function (){
-    return view('blog');
-});
-Route::any('/home',function (){
-    return view('home.userpage');
-});
+Route::any('/home',[HomeController::class,'index']);
 Route::any('/about',function (){
     return view('about');
 });
@@ -41,6 +62,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+//Admin
 
 Route::get('/view_category', [AdminController::class,'view_category']);
 
@@ -84,8 +107,6 @@ Route::get('/remove_cart/{id}', [HomeController::class,'remove_cart']);
 Route::get('/holder/{id}/{idd}', [HomeController::class,'holder'])->name('holder-route');
 
 Route::get('/apply/{id}', [HomeController::class,'apply']);
-
-
 
 Route::get('/donations',[\App\Http\Controllers\DonationController::class,'index'])->name("donations");
 Route::get('/donations/create-new-token',[\App\Http\Controllers\DonationController::class,'createtoken'])->name("token");

@@ -32,25 +32,25 @@
     <!-- project contact section -->
     <div style="margin-left: 80px; padding-top: 50px;">
 
-        <a href="{{url('/add_blog')}}" class="btn btn-success">Add Post</a>
+         <a href="{{url('/add_tutorial')}}" class="btn btn-success">Add Tutorial</a>
 
     </div>
 
     <div style="margin-left: 80px; padding-top: 10px; display: flex; flex-wrap: wrap;">
 
-        @foreach($blogs as $blog)
+
+        @foreach($tutorials as $blog)
 
             <div style="margin-bottom: 20px; width: 31%; margin: 5px;min-height: 400px;">
 
                 <div class="detail-box">
-                    <br>
                     <h5>
                         Title : <span style="color:crimson;">{{$blog->title}}</span>
                     </h5>
 
 
                     <h6>
-                        Description : {{$blog->description}}
+                        Processes : {{$blog->description}}
                     </h6>
                     <h6>
                         Posted By : <span style="color:green;">{{$blog->author}}</span>
